@@ -1,4 +1,5 @@
-import React,{Component} from 'react';
+import React,{ Component } from 'react';
+import ReactDom from 'react-dom';
 import Register from '../components/Register/Register'
 
 
