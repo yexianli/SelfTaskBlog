@@ -1,29 +1,33 @@
-ul{
+ul {
     list-style: none;
 }
-ul,li{
+
+ul, li {
     margin: 0;
     padding: 0;
     position: relative;
 }
-.login{
+
+.login {
     padding-top: 0px;
     max-width: 768px;
-    margin:0 auto;
+    margin: 0 auto;
     min-width: 320px;
     /*background: url(../images/login_bg.png) no-repeat;    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";*/
     background-color: deepskyblue;
-    -moz-background-size:100% 100%;
-    background-size:100% 100%;
-    min-height:480px;
+    -moz-background-size: 100% 100%;
+    background-size: 100% 100%;
+    min-height: 480px;
 }
-.loginBar ul li{
-    width:70%;
-    height:25px;
+
+.loginBar ul li {
+    width: 70%;
+    height: 25px;
     margin: 30px 0 0 11%;
-    border-bottom:1px solid #fff;
+    border-bottom: 1px solid #fff;
 }
- .text {
+
+.text {
     position: absolute;
     margin-left: 3%;
     width: 60%;
@@ -31,8 +35,9 @@ ul,li{
     border: none;
     background: none;
     color: #fff;
-     outline-style: none;
+    outline-style: none;
 }
+
 .psd {
     position: absolute;
     margin-left: 3%;
@@ -43,22 +48,39 @@ ul,li{
     color: #fff;
     outline-style: none;
 }
+
 input::-webkit-input-placeholder {
     color: white;
 }
+
 input:-moz-placeholder {
     color: white;
 }
+
 input::-moz-placeholder {
     color: white;
 }
+
 input:-ms-input-placeholder {
     color: white;
 }
-.verCode{
+
+.verCode {
     position: absolute;
     right: 0;
     padding: 2px;
-    padding-left:5px;
-    border-left: 1px solid #4395ff;;
+    padding-left: 5px;
+    border-left: 1px solid white;
+    bottom: 4px;
+}
+
+.btn {
+
+}
+
+.btn button {
+    border-radius: 20px;
+    color: white;
+    background-color: #4395ff;
+    border: 1px solid #4395ff;
 }
