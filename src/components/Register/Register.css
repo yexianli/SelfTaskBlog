@@ -1,3 +1,12 @@
+.wrap{
+    background: url(./sunFlower.jpg) no-repeat;    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}
 ul {
     list-style: none;
 }
@@ -9,17 +18,26 @@ ul, li {
 }
 
 .login {
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 468px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     padding-top: 0px;
     max-width: 768px;
-    margin: 0 auto;
+    margin: auto;
     min-width: 320px;
-    /*background: url(../images/login_bg.png) no-repeat;    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";*/
-    background-color: deepskyblue;
+    /*background-color: deepskyblue;*/
     -moz-background-size: 100% 100%;
     background-size: 100% 100%;
     min-height: 480px;
 }
-
+.loginBar{
+    margin-top: 88px;
+}
 .loginBar ul li {
     width: 70%;
     height: 25px;
@@ -75,10 +93,12 @@ input:-ms-input-placeholder {
 }
 
 .btn {
-
+    margin-left: 121px;
+    margin-top: 71px;
 }
 
 .btn button {
+    margin-left: 86px;
     border-radius: 20px;
     color: white;
     background-color: #4395ff;

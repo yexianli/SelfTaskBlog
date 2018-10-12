@@ -15,7 +15,7 @@ class App extends React.Component {
     return(
       <Provider store={store}>
 
-              <div>
+              <div >
 
                       <Route exact path="/" component={IndexBox}/>
                       <Route path="/login" component={Login} />
@@ -32,7 +32,8 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(  <HashRouter>
+ReactDOM.render(
+<HashRouter>
     <App/>
 </HashRouter>, document.getElementById('app'));
 

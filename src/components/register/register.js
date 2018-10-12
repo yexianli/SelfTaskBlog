@@ -61,6 +61,7 @@ class Register extends React.Component {
 
     render() {
         return (
+            <div className="wrap">
             <div className="login">
                 <div className="loginBar">
                     <ul>
@@ -73,6 +74,7 @@ class Register extends React.Component {
                 {/*<Link to="/login" >去登陆</Link>*/}
                 {/*<Route path="/login" component={Login} />*/}
              <div className="btn"><button>注册</button><Link to="/login"><button>已有账号，立即登录</button></Link></div>
+            </div>
             </div>
     );
     }
