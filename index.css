@@ -1,0 +1,17 @@
+.register{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 263px;
+    height: 150px;
+}
+.register div{
+    margin-bottom: 15px;
+}
+.register div span{
+    display: inline-block;
+    width: 80px;
+}

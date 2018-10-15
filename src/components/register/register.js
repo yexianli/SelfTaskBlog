@@ -68,13 +68,13 @@ class Register extends React.Component {
         let rPassword = this.refs.rPassword.value
         let repeatPassword = this.refs.repeatPassword.value
         console.log(this.refs.rUserName.value, "注册用户名")
-        // fetch(apiRegisterR)
-        //     .then(function(response) {
-        //         console.log(response.text())
-        //         // return response.text()
-        //     }).then(function(body) {
-        //  console.log(222222)
-        // })
+        fetch("http://localhost:3000?name='yexianli'&phone='123'")
+            .then(function(response) {
+                console.log(response.text())
+                // return response.text()
+            }).then(function(body) {
+         console.log(222222)
+        })
     }
 
     render() {
