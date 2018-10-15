@@ -11,12 +11,12 @@ http.createServer(function (req, res) {
 	var params = url.parse(req.url, true).query;
 	console.log(params.name, params.phone)
 	const table=params.table
-	const useing=params.useing
-	if (typeof(params.name) == "undefined") {
+	const using=params.using
+	if (typeof(params.phone) == "undefined") {
 		console.log("undefined")
 	} else {
 		mongodb.MongoClient.connect("mongodb://localhost/selfBlog", function (err, db) {
-			if (table==="userTable"&&useing==="add") {
+			if (table==="userTable"&&using==="add") {
 				console.log("符合user添加条件")
 				var data = [{"name": params.name, "phone": params.phone, "password": params.password}];
 				db.collection("user").insert(data, function (err, result) {
@@ -25,7 +25,7 @@ http.createServer(function (req, res) {
 					}
 				})
 			}
-			if(table==="userTable"&&useing==="query"){
+			if(table==="userTable"&&using==="query"){
 				console.log("符合user查询条件")
 				data={"phone":params.phone,"password": params.password}
 				db.collection("user").find(data).toArray(function(err, docs) {

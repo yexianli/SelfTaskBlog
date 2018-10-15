@@ -37,7 +37,7 @@
 	    $.ajax({
 		    type: "GET",
 		    url: "http://localhost:3000",
-		    data: {table:"userTable",useing:"query",name:$("#name").val(),phone:$("#phone").val(),password:$("#password").val()},
+		    data: {table:"userTable",using:"query",name:$("#name").val(),phone:$("#phone").val(),password:$("#password").val()},
 		    dataType: "json",
 		    success: function(data){
 			    console.log(data,"后台返回的数据")

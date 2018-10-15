@@ -68,7 +68,7 @@ class Register extends React.Component {
         let rPassword = this.refs.rPassword.value
         let repeatPassword = this.refs.repeatPassword.value
         console.log(this.refs.rUserName.value, "注册用户名")
-        fetch("http://localhost:3000?name='yexianli'&phone='123'")
+        fetch(`http://localhost:3000?table=userTable&using=add&name=${rUsrName}&phone=${rPhone}&password=${rPassword}`)
             .then(function(response) {
                 console.log(response.text())
                 // return response.text()
