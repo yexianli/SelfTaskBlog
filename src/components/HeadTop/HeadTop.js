@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './HomeIndex.css'
-import HeadTop from '../HeadTop/HeadTop'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-// var url  = require('./HomeIndexPwd.png')
+import './HeadTop.css'
 
-class HomeIndex extends React.Component {
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+// var url  = require('./HeadTopPwd.png')
+
+class HeadTop extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,11 +21,9 @@ class HomeIndex extends React.Component {
 
     render() {
         return (
-           <div>
-               <HeadTop/>
-           </div>
+            <div>headTop</div>
         );
     }
 }
 ;
-export default HomeIndex;
+export default HeadTop;
