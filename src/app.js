@@ -7,7 +7,7 @@ import Login from './components/Login/Login'
 import HomeIndex from './components/HomeIndex/HomeIndex'
 import configureStore from './redux/configureStore';
 import Register from "./components/Register/Register";
-
+import WriteBlog from "./components/WriteBlog/WriteBlog"
 const store = configureStore();
 
 class App extends React.Component {
@@ -21,6 +21,7 @@ class App extends React.Component {
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/index" component={HomeIndex}/>
+                    <Route path="/writeBlog" component={WriteBlog}/>
                     {/*<Route exact path='/' component={LoginBox}/>*/}
                     {/*<Route path='/register' component={RegisterBox}/>*/}
                     {/*<Route path='/home' component={HomeLayout}/>*/}

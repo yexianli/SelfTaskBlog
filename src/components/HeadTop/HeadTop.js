@@ -21,7 +21,7 @@ class HeadTop extends React.Component {
 
     render() {
         return (
-            <div>headTop</div>
+            <div><button>博客</button><Link to="/writeBlog"><button>写博客</button></Link></div>
         );
     }
 }

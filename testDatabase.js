@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 
-
+// selfBlog集合下面暂时有user表
 var http = require('http');
 var url = require('url');
 /*get请求*/
