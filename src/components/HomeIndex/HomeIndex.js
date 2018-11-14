@@ -1,31 +1,70 @@
-import React, { Component } from 'react';
-import './HomeIndex.css'
-import HeadTop from '../HeadTop/HeadTop'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-// var url  = require('./HomeIndexPwd.png')
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class HomeIndex extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const HomeIndex = () => (
+	<Router>
+		<div>
+			<ul>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+				<li>
+					<Link to="/about">About</Link>
+				</li>
+				<li>
+					<Link to="/topics">Topics</Link>
+				</li>
+			</ul>
 
-        }
+			<hr />
 
-    }
+			<Route exact path="/" component={Home} />
+			<Route path="/about" component={About} />
+			<Route path="/topics" component={Topics} />
+		</div>
+	</Router>
+);
 
-    componentDidMount() {
+const Home = () => (
+	<div>
+		<h2>Home</h2>
+	</div>
+);
 
-    }
+const About = () => (
+	<div>
+		<h2>About</h2>
+	</div>
+);
 
+const Topics = ({ match }) => (
+	<div>
+		<h2>Topics</h2>
+		<ul>
+			<li>
+				<Link to={`${match.url}/rendering`}>Rendering with React</Link>
+			</li>
+			<li>
+				<Link to={`${match.url}/components`}>Components</Link>
+			</li>
+			<li>
+				<Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+			</li>
+		</ul>
 
+		<Route path={`${match.path}/:topicId`} component={Topic} />
+		<Route
+			exact
+			path={match.path}
+			render={() => <h3>Please select a topic.</h3>}
+		/>
+	</div>
+);
 
-    render() {
-        return (
-           <div>
-               <HeadTop/>
-           </div>
-        );
-    }
-}
-;
-export default HomeIndex;
+const Topic = ({ match }) => (
+	<div>
+		<h3>{match.params.topicId}</h3>
+	</div>
+);
+
+export default HomeIndex

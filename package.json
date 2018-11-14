@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react redux ducks app",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --colors --content-base ./build",
+    "start": "webpack-dev-server --history-api-fallback --hot --inline --colors --content-base ./build",
     "build": "webpack --progress --colors"
   },
   "author": "",
@@ -33,6 +33,7 @@
     "redux-logger": "^2.5.2",
     "whatwg-fetch": "^3.0.0",
     "react-router-dom":"^4.3.1",
-    "mongodb": "^2.2.36"
+    "mongodb": "^2.2.36",
+    "formidable": "^1.1.1"
   }
 }

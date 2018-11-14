@@ -1,5 +1,6 @@
-.wrap{
-    background: url(./sunFlower.jpg) no-repeat;    filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+.wrap {
+    background: url(./sunFlower.jpg) no-repeat;
+    filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -7,6 +8,7 @@
     top: 0px;
     bottom: 0px;
 }
+
 ul {
     list-style: none;
 }
@@ -35,9 +37,11 @@ ul, li {
     background-size: 100% 100%;
     min-height: 480px;
 }
-.loginBar{
+
+.loginBar {
     margin-top: 124px;
 }
+
 .loginBar ul li {
     width: 70%;
     height: 25px;
@@ -104,6 +108,7 @@ input:-ms-input-placeholder {
     background-color: #4395ff;
     border: 1px solid #4395ff;
 }
-.loginBar .loginInput{
+
+.loginBar .loginInput {
     margin-bottom: 101px;
 }
