@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 
-
+// selfBlog集合下面暂时有user表
 var http = require('http');
 var url = require('url');
 /*get请求*/
@@ -37,7 +37,7 @@ http.createServer(function (req, res) {
 			if(table==="userTable"&&using==="fileUpload"){
 				const formidable = require('formidable')
 				const form = new formidable.IncomingForm();   //创建上传表单
-				constAVATAR_UPLOAD_FOLDER = '/avatar/'; // 上传路径
+				const AVATAR_UPLOAD_FOLDER = '/avatar/'; // 上传路径
 				form.encoding = 'utf-8';		//设置编辑
 				form.uploadDir = 'public' + AVATAR_UPLOAD_FOLDER;	 //设置上传目录
 				form.keepExtensions = true;	 //保留后缀

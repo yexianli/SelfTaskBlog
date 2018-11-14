@@ -25,8 +25,16 @@ class HeadTop extends React.Component {
 				</div>
 			</div>
 
+<<<<<<< HEAD
 		);
 	}
+=======
+    render() {
+        return (
+            <div><button>博客</button><Link to="/writeBlog"><button>写博客</button></Link></div>
+        );
+    }
+>>>>>>> 4d81f796cb07ad44f181bfbc51eb195631cafb49
 }
 ;
 export default HeadTop;

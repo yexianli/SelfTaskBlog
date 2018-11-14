@@ -34,6 +34,7 @@
     "whatwg-fetch": "^3.0.0",
     "react-router-dom":"^4.3.1",
     "mongodb": "^2.2.36",
-    "formidable": "^1.1.1"
+    "formidable": "^1.1.1",
+    "draft-js":"^0.10.5"
   }
 }
