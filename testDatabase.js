@@ -98,7 +98,7 @@ http.createServer(function (req, res) {
 					var newPath = form.uploadDir + avatarName;
 
 					// 更改名字和路径
-
+console.log(avatarName,newPath)
 					fs.rename(files.fulAvatar.path, newPath, function (err) {
 						if (err) {
 							return 4
@@ -107,6 +107,7 @@ http.createServer(function (req, res) {
 					})
 				});
 			}
+
 		})
 
 

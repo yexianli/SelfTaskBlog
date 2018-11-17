@@ -9,7 +9,9 @@
 <body>
 
 <div>图片上传：<input type="file" name="fileToUpload" id="fileToUpload" class="fileupload" /><button id="uploadBtn">上传</button></div>
+<div id="btn"><button>测试</button></div>
 </body>
+
 <script>
 
 	// 图片上传
@@ -22,7 +24,7 @@
 				var data = new FormData();
 				data.append('fulAvatar', $('#fileToUpload')[0].files[0]);
 				$.ajax({
-					url: 'http://localhost:3000?table=userTable&using=fileUpload&phone="123',
+					url: 'http://localhost:3000/fileUpload',
 					type: 'POST',
 					data: data,
 					cache: false,
@@ -42,7 +44,19 @@
 
 	});
 
+	$('#btn').click(function(event) {
+		$.ajax({
+			url: 'http://localhost:3000/test',
+			type: 'get',
+			success: function(data) {
+				console.log('-------upload img:', data);
 
+			},
+			error: function() {
+				console.log('error');
+			}
+		});
+	})
 
 </script>
 </html>
