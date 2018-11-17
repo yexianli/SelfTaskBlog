@@ -3,6 +3,7 @@ var mongodb = require('mongodb');
 // selfBlog集合下面暂时有user表
 var http = require('http');
 var url = require('url');
+var fs=require("fs")
 /*get请求*/
 http.createServer(function (req, res) {
 	res.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,6 +36,7 @@ http.createServer(function (req, res) {
 				});
 			}
 			if(table==="userTable"&&using==="fileUpload"){
+				console.log("到上传文件这里")
 				const formidable = require('formidable')
 				const form = new formidable.IncomingForm();   //创建上传表单
 				const AVATAR_UPLOAD_FOLDER = '/avatar/'; // 上传路径
@@ -46,22 +48,18 @@ http.createServer(function (req, res) {
 				form.parse(req, function (err, fields, files) {
 
 					if (err) {
-						return res.json({
-							"code": 500,
-							"message": "内部服务器错误"
-						})
+						console.log(err)
+						return 1
 					}
 
 					// 限制文件大小 单位默认字节 这里限制大小为2m
-					if (files.fulAvatar.size > form.maxFieldsSize) {
-						fs.unlink(files.fulAvatar.path)
-						return res.json({
-							"code": 401,
-							"message": "图片应小于2M"
-						})
-					}
+					// if (files.fulAvatar.size > form.maxFieldsSize) {
+					// 	fs.unlink(files.fulAvatar.path)
+					// 	return 2
+					// }
 
 					var extName = '';  //后缀名
+					console.log(files.fulAvatar.type)
 					switch (files.fulAvatar.type) {
 						case 'image/pjpeg':
 							extName = 'jpg';
@@ -75,16 +73,21 @@ http.createServer(function (req, res) {
 						case 'image/x-png':
 							extName = 'png';
 							break;
+						case 'application/x-msdownload':
+							extName = 'exe';
+							break;
+						case 'application/zip':
+							extName = 'zip';
+							break;
+
 					}
 
 					if (extName.length == 0) {
-						return res.json({
-							"code": 404,
-							"message": "只支持png和jpg格式图片"
-						})
+						return 3
 					}
 
 					//使用第三方模块silly-datetime
+					var sd=require("silly-datetime")
 					var t = sd.format(new Date(), 'YYYYMMDDHHmmss');
 					//生成随机数
 					var ran = parseInt(Math.random() * 8999 + 10000);
@@ -95,18 +98,12 @@ http.createServer(function (req, res) {
 					var newPath = form.uploadDir + avatarName;
 
 					// 更改名字和路径
+
 					fs.rename(files.fulAvatar.path, newPath, function (err) {
 						if (err) {
-							return res.json({
-								"code": 401,
-								"message": "图片上传失败"
-							})
+							return 4
 						}
-						return res.json({
-							"code": 200,
-							"message": "上传成功",
-							result: AVATAR_UPLOAD_FOLDER + avatarName
-						})
+						return 5
 					})
 				});
 			}

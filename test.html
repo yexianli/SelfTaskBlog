@@ -18,11 +18,11 @@
 		if ($('.fileupload').val().length) {
 			var fileName = $('.fileupload').val();
 			var extension = fileName.substring(fileName.lastIndexOf('.'), fileName.length).toLowerCase();
-			if (extension == ".jpg" || extension == ".png") {
+
 				var data = new FormData();
 				data.append('fulAvatar', $('#fileToUpload')[0].files[0]);
 				$.ajax({
-					url: 'http://localhost:3000?table=userTable&using=fileUpload',
+					url: 'http://localhost:3000?table=userTable&using=fileUpload&phone="123',
 					type: 'POST',
 					data: data,
 					cache: false,
@@ -39,7 +39,7 @@
 					}
 				});
 			}
-		}
+
 	});
 
 
