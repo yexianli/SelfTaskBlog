@@ -23,9 +23,9 @@
     $("#register").click(function () {
     	console.log($("#name").val())
 	    $.ajax({
-		    type: "GET",
-		    url: "http://localhost:3000",
-		    data: {table:"userTable",useing:"add",name:$("#name").val(),phone:$("#phone").val(),password:$("#password").val()},
+		    type: "get",
+		    url: 'http://localhost:3000/register',
+		    data: {name:$("#name").val(),phone:$("#phone").val(),password:$("#password").val()},
 		    dataType: "json",
 		    success: function(data){
 			  console.log(data)
@@ -35,9 +35,9 @@
     $("#login").click(function () {
 	    console.log($("#name").val())
 	    $.ajax({
-		    type: "GET",
-		    url: "http://localhost:3000",
-		    data: {table:"userTable",using:"query",name:$("#name").val(),phone:$("#phone").val(),password:$("#password").val()},
+		    type: "get",
+		    url: 'http://localhost:3000/login',
+		    data: {name:$("#name").val(),password:$("#password").val()},
 		    dataType: "json",
 		    success: function(data){
 			    console.log(data,"后台返回的数据")

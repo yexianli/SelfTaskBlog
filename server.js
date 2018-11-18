@@ -10,13 +10,10 @@ var allowCrossDomain = function (req, res, next) {
 
 app.use(allowCrossDomain);//运用跨域的中间件
 app.use(bodyParser.text());//运用中间件，对请求体的文本进行解析
-
-app.get('/test', function(req, res){
-	res.send('hello world');
-});
 var file = require("./route/file.js");  //此时，route.js与file.js处于同个目录下
-
+var user = require("./route/user.js");
 app.post('/fileUpload', file.upload);
 app.get('/download', file.download);
-
+app.get('/login', user.login);
+app.get('/register', user.register);
 app.listen(3000);

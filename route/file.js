@@ -76,13 +76,6 @@ exports.upload = function(req, res, next){
 
 };
 
-
-
-
-
-
-
-
 exports.download = function(req, res){
 
 	var path = req.query.path;  // 文件存储的路径
@@ -90,7 +83,4 @@ exports.download = function(req, res){
 	// filename:设置下载时文件的文件名，可不填，则为原名称
 	res.download(path);
 
-};
-exports.test = function(req, res){
-	console.log("test")
 };
