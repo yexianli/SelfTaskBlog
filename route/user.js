@@ -5,7 +5,7 @@ function testTel(tel) {
 	return /^1[3|4|5|7|8][0-9]{9}$/.test(tel);
 }
 exports.login = function (req, res, next) {
-	let user = req.query.name, pwd = md5(req.query.password)
+	let user = req.body.name, pwd = md5(req.body.password)
 	// 根据用户名查询数据库中是否含有该用户
 	db.findOne('user', {"name": user}, function (err, result) {
 		if (err) {
@@ -51,13 +51,13 @@ exports.login = function (req, res, next) {
 exports.register = function (req, res, next) {
 
 	let newData = {
-		"name": req.query.name,
-		"phone": req.query.phone,
-		"password": md5(req.query.password),
-		"img": req.query.img
+		"name": req.body.name,
+		"phone": req.body.phone,
+		"password": md5(req.body.password),
+		"img": req.body.img
 	};
 
-	// if (!testTel(req.query.phone)) {
+	// if (!testTel(req.body.phone)) {
 	// 	return res.json({
 	// 		"code": 401,
 	// 		"message": "手机号码格式不正确"

@@ -23,7 +23,7 @@
     $("#register").click(function () {
     	console.log($("#name").val())
 	    $.ajax({
-		    type: "get",
+		    type: "post",
 		    url: 'http://localhost:3000/register',
 		    data: {name:$("#name").val(),phone:$("#phone").val(),password:$("#password").val()},
 		    dataType: "json",
